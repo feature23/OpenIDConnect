@@ -5,7 +5,7 @@ A set of utility libraries to ease OpenID Connect integration with Azure Mobile 
 
 To use the F23.AzureMobileServices.OpenIDConnect library, add a reference to the DLL and create a new Web API controller in your project that inherits from OpenIDConnectLoginControllerBase:
 
-```  
+```C#
 [AuthorizeLevel(AuthorizationLevel.Anonymous)]
 public class OpenIDLoginController : OpenIDConnectLoginControllerBase
 {
@@ -19,7 +19,7 @@ public class OpenIDLoginController : OpenIDConnectLoginControllerBase
 Where AppSettings.MsMasterKey is the master key string to your Azure Mobile Service, and AppSettings.IdpSiteUrl is the base URL of your OpenID Connect provider (i.e. Thinktecture Identity Server v3+).
 
 Then, from your mobile app, invoke a POST to /api/OpenIDLogin with your JWT token provided by the OpenID Connect provider (after authentication), in JSON format in the body of the HTTP request:
-```
+```JSON
 {"jwtToken":"... your JWT token from OpenID Connect here ..."}
 ```
 
